@@ -1,0 +1,303 @@
+  
+  <%- contentFor('HeaderCss') %>
+  <!-- <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+  <!-- perticular page css -->
+  <link href="public/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css" rel="stylesheet">
+  <link href="public/plugins/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css" rel="stylesheet">
+  <link href="public/plugins/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
+  <link href="public/plugins/bootstrap-touchspin/css/jquery.bootstrap-touchspin.min.css" rel="stylesheet" />
+  <!-- perticular page css -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css" rel="stylesheet" />
+      <!-- DataTables -->
+      <link href="public/plugins/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+      <link href="public/plugins/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+      <!-- Responsive datatable examples -->
+      <link href="public/plugins/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+      <link href="public/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css" rel="stylesheet">
+      <link href="public/plugins/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css" rel="stylesheet">
+      <link href="public/plugins/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
+      <link href="public/plugins/bootstrap-touchspin/css/jquery.bootstrap-touchspin.min.css" rel="stylesheet" />
+      
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.css">
+      <style>
+            .bootstrap-tagsinput {
+                background-color: #fff;
+                border: 1px solid #ccc;
+                box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+                display: inline-block;
+                padding: 4px 6px;
+                color: #555;
+                vertical-align: middle;
+                border-radius: 4px;
+                max-width: 100%;
+                line-height: 22px;
+                cursor: text;
+            }
+        
+            .bootstrap-tagsinput input {
+                border: none;
+                box-shadow: none;
+                outline: none;
+                background-color: transparent;
+                padding: 0 6px;
+                margin: 0;
+                width: 250px;
+                max-width: inherit;
+            }
+            input{
+                border: none;
+                box-shadow: none;
+                outline: none;
+               
+                padding: 0 6px;
+                margin: 0;
+                width: 250px;
+                max-width: inherit;
+                background-color: #fff;
+                border: 1px solid #ccc;
+                box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+                display: inline-block;
+                padding: 4px 6px;
+                color: #555;
+                vertical-align: middle;
+                border-radius: 4px;
+                max-width: 100%;
+                line-height: 22px;
+                cursor: text;
+            }
+        
+           /* Example tokeninput style #1: Token vertical list*/
+ul.token-input-list {
+    overflow: hidden; 
+    height: auto !important; 
+    height: 1%;
+    width: 400px;
+    border: 1px solid #999;
+    cursor: text;
+    font-size: 12px;
+    font-family: Verdana;
+    z-index: 999;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    list-style-type: none;
+    clear: left;
+}
+
+ul.token-input-list li {
+    list-style-type: none;
+}
+
+ul.token-input-list li input {
+    border: 0;
+    width: 350px;
+    padding: 3px 8px;
+    background-color: white;
+    -webkit-appearance: caret;
+}
+
+li.token-input-token {
+    overflow: hidden; 
+    height: auto !important; 
+    height: 1%;
+    margin: 3px;
+    padding: 3px 5px;
+    background-color: #d0efa0;
+    color: #000;
+    font-weight: bold;
+    cursor: default;
+    display: block;
+}
+
+li.token-input-token p {
+    float: left;
+    padding: 0;
+    margin: 0;
+}
+
+li.token-input-token span {
+    float: right;
+    color: #777;
+    cursor: pointer;
+}
+
+li.token-input-selected-token {
+    background-color: #08844e;
+    color: #fff;
+}
+
+li.token-input-selected-token span {
+    color: #bbb;
+}
+
+div.token-input-dropdown {
+    position: absolute;
+    width: 400px;
+    background-color: #fff;
+    overflow: hidden;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    cursor: default;
+    font-size: 12px;
+    font-family: Verdana;
+    z-index: 1;
+}
+
+div.token-input-dropdown p {
+    margin: 0;
+    padding: 5px;
+    font-weight: bold;
+    color: #777;
+}
+
+div.token-input-dropdown ul {
+    margin: 0;
+    padding: 0;
+}
+
+div.token-input-dropdown ul li {
+    background-color: #fff;
+    padding: 3px;
+    list-style-type: none;
+}
+
+div.token-input-dropdown ul li.token-input-dropdown-item {
+    background-color: #fafafa;
+}
+
+div.token-input-dropdown ul li.token-input-dropdown-item2 {
+    background-color: #fff;
+}
+
+div.token-input-dropdown ul li em {
+    font-weight: bold;
+    font-style: normal;
+}
+
+div.token-input-dropdown ul li.token-input-selected-dropdown-item {
+    background-color: #d0efa0;
+}
+        
+        </style>
+  <%- contentFor('body') %>
+  
+  <!-- Start content -->
+                <div class="content">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="page-title-box">
+                                  <form action="/movies" method ="post">
+                                    <center>
+                                        Filters : 
+                                    <input type="text" name="name" placeholder="Name">
+                                    <input type="text" name="director" placeholder="Director">
+                                    <input type="text" name="genre" placeholder="Genre" id="vidyagames" autocomplete="off"  >
+                                        <button type="submit"  style="margin-right:50px;"
+                                        class="btn btn-info">Submit </button>
+                                        </center>
+                                        
+                                        </form>
+                                    </div>
+                                   
+                                </div>
+                             
+                            </div>
+                          
+                        </div>
+                        <!-- end row -->
+                      
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card m-b-20">
+                                    <div class="card-body">
+                                        <h4 class="mt-0 header-title">Movies List</h4>
+                                        
+                                        <table  id="datatable-buttons" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                                            <thead>
+                                                <tr>
+                                                    <th> Name </th>
+                                                    <th>Director</th>
+                                                    <th>Imdb Score</th>
+                                                    <th>Popularity</th>
+                                   
+                                                </tr>
+                                                </thead>
+                                            <tbody>
+                                                <% for(var i=0; i < data.length; i++) { %>
+                                                    <tr>
+                                                        <td><%= data[i].name %></td>
+                                                        <td><%= data[i].director %></td>
+                                                        <td><%= data[i].imdb_score %></td>
+                                                        <td><%= data[i].popularity %></td>
+                                                   
+                                                    </tr>
+                                                 <% } %>
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+                                </div>
+                            </div> <!-- end col -->
+                        </div> <!-- end row -->
+                    </div> <!-- container-fluid -->
+
+                </div> <!-- content -->
+
+                <%- contentFor('FooterJs') %>
+
+                 <!-- Required datatable js -->
+        <script src="public/plugins/datatables/jquery.dataTables.min.js"></script>
+        <script src="public/plugins/datatables/dataTables.bootstrap4.min.js"></script>
+        <!-- Buttons examples -->
+        <script src="public/plugins/datatables/dataTables.buttons.min.js"></script>
+        <script src="public/plugins/datatables/buttons.bootstrap4.min.js"></script>
+        <script src="public/plugins/datatables/jszip.min.js"></script>
+        <script src="public/plugins/datatables/pdfmake.min.js"></script>
+        <script src="public/plugins/datatables/vfs_fonts.js"></script>
+        <script src="public/plugins/datatables/buttons.html5.min.js"></script>
+        <script src="public/plugins/datatables/buttons.print.min.js"></script>
+        <script src="public/plugins/datatables/buttons.colVis.min.js"></script>
+        <!-- Responsive examples -->
+        <script src="public/plugins/datatables/dataTables.responsive.min.js"></script>
+        <script src="public/plugins/datatables/responsive.bootstrap4.min.js"></script>
+
+        <!-- Datatable init js -->
+        <script src="public/assets/pages/datatables.init.js"></script>
+
+        <!-- Plugins js -->
+  <script src="public/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
+  <script src="public/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+  <script src="public/plugins/select2/js/select2.min.js"></script>
+  <script src="public/plugins/bootstrap-maxlength/bootstrap-maxlength.min.js"></script>
+  <script src="public/plugins/bootstrap-filestyle/js/bootstrap-filestyle.min.js"></script>
+  <script src="public/plugins/bootstrap-touchspin/js/jquery.bootstrap-touchspin.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/select2.min.js"></script>
+  <!-- Plugins Init js -->
+  <script src="public/assets/pages/form-advanced.js"></script>
+  <script src="https://loopj.com/jquery-tokeninput/src/jquery.tokeninput.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.min.js"></script>
+
+  <script>
+        let data =[ { "id" : "Family", "name" : "Family" }, { "id" : "Musical", "name" : "Musical" }, { "id" : "Action", "name" : "Action" }, { "id" : "Drama", "name" : "Drama" }, { "id" : "Mystery", "name" : "Mystery" }, { "id" : "Romance", "name" : "Romance" }, { "id" : "Comedy", "name" : "Comedy" }, { "id" :  "Music", "name" : "Music" }, { "id" : "family-relation", "name" : "family-relation" } ]
+        $('#vidyagames').tokenInput(data, {
+            hintText: "Select Genre",
+            noResultsText: "Nothin' found.",
+            searchingText: "Loading...",
+            preventDuplicates: true,
+            onAdd: function (item) {
+                sync(this.tokenInput("get"));
+            },
+            onDelete: function (item) {
+                sync(this.tokenInput("get"));
+            }
+        });
+
+ function sync(items) {
+        var value = items.reduce(function (s, item) {
+            return s + ' ' + item.name;
+        }, '');
+    }
+   
+      </script>

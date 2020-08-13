@@ -1,0 +1,140 @@
+<%- contentFor('HeaderCss') %>
+<!-- perticular page css -->
+
+<%- contentFor('body') %>
+
+
+<!-- Start content -->
+
+<div class="content row">
+    <div class="col-md-6">
+        <br /><br />
+        <% if (typeof msg!= 'undefined') { %>
+        <div class="alert alert-success"><%= msg %></div>
+        <% } %>
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="card m-b-30 text-white bg-info">
+                    <div class="card-body">
+                        <form action="/articles_sync" method="post">
+                            <button type="submit" class="btn btn-success">Sync Articles</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" style="justify-content: flex-end;padding-bottom: 9px;">
+      
+                <div class="col-md-2">
+                    <a href="/sync_report"> <button type="button" 
+                         class="btn btn-primary w-md waves-effect waves-light">Sync Report</button></a>
+                 </div>
+               
+               
+            </div>
+            <!--         
+                            <div class="col-lg-4">
+                                <div class="card m-b-30 text-white bg-primary">
+                                    <div class="card-body">
+                                        <blockquote class="card-blockquote mb-0">
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere
+                                                erat a ante.</p>
+                                            <footer class="blockquote-footer text-white font-12">
+                                                Someone famous in <cite title="Source Title">Source Title</cite>
+                                            </footer>
+                                        </blockquote>
+                                    </div>
+                                </div>
+                            </div> -->
+
+            <!-- <div class="col-lg-4">
+                                <div class="card m-b-30 text-white bg-success">
+                                    <div class="card-body">
+                                        <blockquote class="card-blockquote mb-0">
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere
+                                                erat a ante.</p>
+                                            <footer class="blockquote-footer text-white font-12">
+                                                Someone famous in <cite title="Source Title">Source Title</cite>
+                                            </footer>
+                                        </blockquote>
+                                    </div>
+                                </div>
+                            </div> -->
+        </div>
+        <!-- end row -->
+
+
+        <!-- <div class="row">
+                            <div class="col-lg-4">
+                                <div class="card m-b-30 text-white bg-info">
+                                    <div class="card-body">
+                                        <blockquote class="card-blockquote mb-0">
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere
+                                                erat a ante.</p>
+                                            <footer class="blockquote-footer text-white font-12">
+                                                Someone famous in <cite title="Source Title">Source Title</cite>
+                                            </footer>
+                                        </blockquote>
+                                    </div>
+                                </div>
+                            </div>
+        
+                            <div class="col-lg-4">
+                                <div class="card m-b-30 text-white bg-warning">
+                                    <div class="card-body">
+                                        <blockquote class="card-blockquote mb-0">
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere
+                                                erat a ante.</p>
+                                            <footer class="blockquote-footer text-white font-12">
+                                                Someone famous in <cite title="Source Title">Source Title</cite>
+                                            </footer>
+                                        </blockquote>
+                                    </div>
+                                </div>
+                            </div>
+        
+                            <div class="col-lg-4">
+                                <div class="card m-b-30 text-white bg-danger">
+                                    <div class="card-body">
+                                        <blockquote class="card-blockquote mb-0">
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere
+                                                erat a ante.</p>
+                                            <footer class="blockquote-footer text-white font-12">
+                                                Someone famous in <cite title="Source Title">Source Title</cite>
+                                            </footer>
+                                        </blockquote>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+        <!-- end row -->
+
+
+
+
+        <!-- end row -->
+
+    </div> <!-- container-fluid -->
+    <div class="container col-md-6">
+        <label class="mb-3"><strong>Add new author</strong></label>
+        <form method="POST" action="/addAuthor" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="name">Author Name</label>
+                <input class="form-control" name="name" id="name" placeholder="Enter author name" required>
+            </div>
+            <div class="form-group">
+                <label for="authorid">Author Id</label>
+                <input type="number" class="form-control" name="authorid" id="authorid" placeholder="Enter author Id" required>
+            </div>
+            <div class="form-group">
+                <label for="desc">Author Description</label>
+                <input class="form-control" required name="desc" id="desc" placeholder="Enter author description">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
+
+
+<!-- content -->
+<%- contentFor('FooterJs') %>

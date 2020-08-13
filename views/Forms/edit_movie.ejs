@@ -1,0 +1,302 @@
+<%- contentFor('HeaderCss') %>
+<!-- perticular page css -->
+<link href="public/plugins/dropzone/dist/dropzone.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/cropper/2.3.4/cropper.min.css'>
+<style>
+        .bootstrap-tagsinput {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+            display: inline-block;
+            padding: 4px 6px;
+            color: #555;
+            vertical-align: middle;
+            border-radius: 4px;
+            max-width: 100%;
+            line-height: 22px;
+            cursor: text;
+        }
+    
+        .bootstrap-tagsinput input {
+            border: none;
+            box-shadow: none;
+            outline: none;
+            background-color: transparent;
+            padding: 0 6px;
+            margin: 0;
+            width: 250px;
+            max-width: inherit;
+        }
+        input{
+            border: none;
+            box-shadow: none;
+            outline: none;
+           
+            padding: 0 6px;
+            margin: 0;
+            width: 250px;
+            max-width: inherit;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+            display: inline-block;
+            padding: 4px 6px;
+            color: #555;
+            vertical-align: middle;
+            border-radius: 4px;
+            max-width: 100%;
+            line-height: 22px;
+            cursor: text;
+        }
+    
+       /* Example tokeninput style #1: Token vertical list*/
+ul.token-input-list {
+overflow: hidden; 
+height: auto !important; 
+height: 1%;
+width: 400px;
+border: 1px solid #999;
+cursor: text;
+font-size: 12px;
+font-family: Verdana;
+z-index: 999;
+margin: 0;
+padding: 0;
+background-color: #fff;
+list-style-type: none;
+clear: left;
+}
+
+ul.token-input-list li {
+list-style-type: none;
+}
+
+ul.token-input-list li input {
+border: 0;
+width: 350px;
+padding: 3px 8px;
+background-color: white;
+-webkit-appearance: caret;
+}
+
+li.token-input-token {
+overflow: hidden; 
+height: auto !important; 
+height: 1%;
+margin: 3px;
+padding: 3px 5px;
+background-color: #d0efa0;
+color: #000;
+font-weight: bold;
+cursor: default;
+display: block;
+}
+
+li.token-input-token p {
+float: left;
+padding: 0;
+margin: 0;
+}
+
+li.token-input-token span {
+float: right;
+color: #777;
+cursor: pointer;
+}
+
+li.token-input-selected-token {
+background-color: #08844e;
+color: #fff;
+}
+
+li.token-input-selected-token span {
+color: #bbb;
+}
+
+div.token-input-dropdown {
+position: absolute;
+width: 400px;
+background-color: #fff;
+overflow: hidden;
+border-left: 1px solid #ccc;
+border-right: 1px solid #ccc;
+border-bottom: 1px solid #ccc;
+cursor: default;
+font-size: 12px;
+font-family: Verdana;
+z-index: 1;
+}
+
+div.token-input-dropdown p {
+margin: 0;
+padding: 5px;
+font-weight: bold;
+color: #777;
+}
+
+div.token-input-dropdown ul {
+margin: 0;
+padding: 0;
+}
+
+div.token-input-dropdown ul li {
+background-color: #fff;
+padding: 3px;
+list-style-type: none;
+}
+
+div.token-input-dropdown ul li.token-input-dropdown-item {
+background-color: #fafafa;
+}
+
+div.token-input-dropdown ul li.token-input-dropdown-item2 {
+background-color: #fff;
+}
+
+div.token-input-dropdown ul li em {
+font-weight: bold;
+font-style: normal;
+}
+
+div.token-input-dropdown ul li.token-input-selected-dropdown-item {
+background-color: #d0efa0;
+}
+    
+    </style>
+
+<%- contentFor('body') %>
+
+
+<div class="content">
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="page-title-box">
+
+                    <% include ../Partials/TinyCharts %>
+
+                </div>
+            </div>
+        </div>
+        <!-- end row -->
+
+        <div class="row">
+            <div class="col-12">
+                <div class="card m-b-20">
+                    <div class="card-body">
+
+                        <h4 class="mt-0 header-title">Edit Movie</h4>
+                        <!-- <p class="text-muted m-b-30">Complete your profile To Start Listing Jobs . </p> -->
+                        <form class="" action="/edit_movie" method="post">
+<input type="hidden"  name="id" value="<%= data._id %>">
+                            <div class="form-group row">
+                                <label for="example-url-input" class="col-sm-2 col-form-label">Name<font color="red">*</font></label>
+                                <div class="col-sm-10">
+                                    <input class="form-control" placeholder="Provide name"   id="name" required value="<%= data.name %>" disabled />
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="example-url-input" class="col-sm-2 col-form-label">Director<font color="red">*</font></label>
+                                <div class="col-sm-10">
+                                    <input class="form-control" placeholder="Provide Director" name="director"  id="name" required value="<%= data.director %>"/>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                    <label for="example-url-input" class="col-sm-2 col-form-label">Imdb Score<font color="red">*</font></label>
+                                    <div class="col-sm-10">
+                                        <input class="form-control" placeholder="Provide Imdb Score" name="imdb_score"  id="name" required value="<%= data.imdb_score %>"/>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                        <label for="example-url-input" class="col-sm-2 col-form-label">Popularity<font color="red">*</font></label>
+                                        <div class="col-sm-10">
+                                            <input class="form-control" placeholder="Provide Popularity" name="popularity"  id="name" required value="<%= data.popularity %>"/>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                            <label for="example-url-input" class="col-sm-2 col-form-label">Genre<font color="red">*</font></label>
+                                            <div class="col-sm-10">
+                                                <input class="form-control" placeholder="Provide Genres" name="genre" id="vidyagames" autocomplete="off" value="<%= data.genre  %>"  />
+                                            </div>
+                                        </div>
+
+                            <div class="form-group row">
+                                <div class="col-sm-10">
+                                    <button type="reset" class="btn btn-secondary waves-effect m-l-5">Clear All</button>
+                                    <button type="submit" id="submit-all"
+                                        class="btn btn-primary waves-effect waves-light">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div> <!-- end col -->
+        </div> <!-- end row -->
+
+
+    </div> <!-- container-fluid -->
+
+</div> <!-- content -->
+
+
+<%- contentFor('FooterJs') %>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
+<script src="public/plugins/dropzone/dist/dropzone.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/cropperjs/0.8.1/cropper.min.js'></script>
+
+<script src="https://loopj.com/jquery-tokeninput/src/jquery.tokeninput.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.min.js"></script>
+
+<script>
+      $(function () {
+        let data = [ { "id" : "Family", "name" : "Family" }, { "id" : "Musical", "name" : "Musical" }, { "id" : "Action", "name" : "Action" }, { "id" : "Drama", "name" : "Drama" }, { "id" : "Mystery", "name" : "Mystery" }, { "id" : "Romance", "name" : "Romance" }, { "id" : "Comedy", "name" : "Comedy" }, { "id" :  "Music", "name" : "Music" }, { "id" : "family-relation", "name" : "family-relation" } ]
+        let populateValues = JSON.parse(htmlDecode("<%= JSON.stringify(data.genre) %>"));
+     populateValues =  populateValues.map(obj=>{
+         obj.id = obj.name;
+         return obj;
+      })
+        console.log(populateValues);
+        $('#vidyagames').tokenInput(data, {
+            hintText: "Select Genre",
+            noResultsText: "Nothin' found.",
+            searchingText: "Loading...",
+            preventDuplicates: false,
+            onAdd: function (item) {
+                sync(this.tokenInput("get"));
+
+
+            },
+            onDelete: function (item) {
+                sync(this.tokenInput("get"));
+            },
+            prePopulateFromValue: true,
+            prePopulate: populateValues
+        });
+
+    });
+
+function sync(items) {
+      var value = items.reduce(function (s, item) {
+          return s + ' ' + item.name;
+      }, '');
+  }
+  function htmlDecode(input) {
+        var e = document.createElement('div');
+        e.innerHTML = input;
+        return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
+    }
+    </script>
+
+
+
+
+
+
+
+
+
+
