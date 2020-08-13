@@ -1,0 +1,53 @@
+<% include ../Partials/HeaderRoot  %>
+        <div class="wrapper-page">
+
+            <div class="card">
+                <div class="card-body">
+
+                  
+
+                    <div class="p-3">
+                         <p class="text-muted text-center">Sign in to continue to Admin Panel.</p>
+                        <% if (typeof message!= 'undefined') { %>
+                            <div class="alert alert-danger"><%= message %></div>
+                        <% } %>
+                        <% if (typeof message1!= 'undefined') { %>
+                            <div class="alert alert-success"><%= message1 %></div>
+                        <% } %>
+        
+                        <form method="post" action="/login">
+                            <div class="form-group">
+                              <label for="exampleInputEmail1">Username</label>
+                              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="name" placeholder="Enter username" required>
+                            </div>
+                            <div class="form-group">
+                              <label for="exampleInputPassword1">Password</label>
+                              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                          </form>
+
+                        <!-- <p class="text-muted text-center">Sign in to continue to Fonik.</p> -->
+                       
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- <div class="m-t-40 text-center">
+                <p>Don't have an account ? <a href="pages-register.html" class="text-primary"> Signup Now </a> </p>
+                <p>© 2018 Lexa. Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesbrand</p>
+            </div> -->
+
+        </div>
+
+        <% include ../Partials/FooterRoot  %>
+        <script src="public/plugins/parsleyjs/parsley.min.js"></script>
+  <script>
+    $(document).ready(function() {
+        $('form').parsley();
+    });
+</script>
+<!-- <script type="text/javascript">
+document.getElementsByName("login_form").action="/login?route=abc";
+</script> -->
